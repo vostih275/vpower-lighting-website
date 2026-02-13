@@ -100,14 +100,16 @@ class GalleryLoader {
                         muted 
                         loop 
                         playsinline
-                        preload="metadata"
+                        preload="auto"
                         onloadeddata="console.log('Video loaded successfully:', '${media.path}')"
                         onerror="console.error('Video failed to load:', '${media.path}'); this.parentElement.classList.add('video-error');"
-                        onmouseenter="if(this.readyState >= 2) { this.play(); this.parentElement.querySelector('.play-icon').style.display = 'none'; } else { console.log('Video not ready for playback'); }"
+                        onmouseenter="this.play().then(() => { this.parentElement.querySelector('.play-icon').style.display = 'none'; }).catch(e => console.log('Play failed:', e));"
                         onmouseleave="this.pause(); this.currentTime = 0; this.parentElement.querySelector('.play-icon').style.display = 'flex';"
-                        onclick="galleryLoader.openLightbox('${media.path}', '${media.type}')">
+                        onplay="console.log('Video started playing:', '${media.path}')"
+                        onpause="console.log('Video paused:', '${media.path}')"
+                        onclick="galleryLoader.toggleVideo(this)">
                         <source src="${media.path}" type="video/mp4">
-                        Your browser does not support the video tag.
+                        Your browser does not support video tag.
                     </video>
                     <div class="media-overlay">
                         <div class="play-icon">▶️</div>
@@ -152,12 +154,23 @@ class GalleryLoader {
                     overlay.style.opacity = '1';
                 }
                 
-                // Handle video hover
+                // Handle video hover with retry logic
                 const video = item.querySelector('.media-video');
                 const playIcon = item.querySelector('.play-icon');
                 if (video && playIcon) {
-                    video.play().catch(e => console.log('Video play failed:', e));
-                    playIcon.style.display = 'none';
+                    // Try to play video with multiple attempts
+                    const attemptPlay = () => {
+                        video.play().then(() => {
+                            playIcon.style.display = 'none';
+                            console.log('Video playing successfully');
+                        }).catch(e => {
+                            console.log('Video play failed, retrying...', e);
+                            // Retry after a short delay
+                            setTimeout(attemptPlay, 500);
+                        });
+                    };
+                    
+                    attemptPlay();
                 }
             });
             
@@ -186,6 +199,20 @@ class GalleryLoader {
         } else {
             videoElement.pause();
             videoElement.parentElement.querySelector('.play-icon').style.display = 'block';
+        }
+    }
+
+    toggleVideo(videoElement) {
+        const playIcon = videoElement.parentElement.querySelector('.play-icon');
+        if (videoElement.paused) {
+            videoElement.play().then(() => {
+                playIcon.style.display = 'none';
+            }).catch(e => {
+                console.log('Toggle play failed:', e);
+            });
+        } else {
+            videoElement.pause();
+            playIcon.style.display = 'flex';
         }
     }
 
