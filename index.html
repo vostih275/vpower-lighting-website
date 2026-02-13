@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VPOWER LIGHTING AND DECOR | Rustic Handmade Lighting</title>
+    <meta name="description" content="Handcrafted rustic lighting fixtures and professional installation services by VPOWER LIGHTING AND DECOR. Unique, handmade pieces with expert installation. Shop our collection of barn wood chandeliers, iron forge pendants, and vintage lanterns.">
+    <meta name="keywords" content="rustic lighting, handmade lighting, barn wood chandelier, iron pendant light, vintage lantern, custom lighting, reclaimed wood fixtures, artisan lighting, lighting installation, professional electrician, lighting design services">
+    <meta name="author" content="VPOWER LIGHTING AND DECOR">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://vpowerlighting.com/">
+    <meta property="og:title" content="VPOWER LIGHTING AND DECOR | Rustic Handmade Lighting">
+    <meta property="og:description" content="Handcrafted rustic lighting fixtures that bring warmth and elegance to your space. Unique, handmade pieces with traditional craftsmanship.">
+    <meta property="og:image" content="https://vpowerlighting.com/assets/images/logo-converted.svg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://vpowerlighting.com/">
+    <meta property="twitter:title" content="VPOWER LIGHTING AND DECOR | Rustic Handmade Lighting">
+    <meta property="twitter:description" content="Handcrafted rustic lighting fixtures that bring warmth and elegance to your space.">
+    <meta property="twitter:image" content="https://vpowerlighting.com/assets/images/logo-converted.svg">
+    
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
+</head>
+<body>
+
+    <nav>
+        <ul class="nav-links">
+            <li><a href="#home" aria-label="Navigate to home section">Home</a></li>
+            <li><a href="#mission" aria-label="Navigate to about section">About</a></li>
+            <li><a href="#gallery" aria-label="Navigate to collection section">Collection</a></li>
+            <li><a href="#blog" aria-label="Navigate to our story section">Our Story</a></li>
+            <li><a href="#services" aria-label="Navigate to services section">Services</a></li>
+            <li><a href="contact.html" class="cta-btn-nav" aria-label="Navigate to contact page">Contact Us</a></li>
+            <li class="cart-icon" onclick="openCart()" role="button" tabindex="0" aria-label="Open shopping cart" aria-expanded="false">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z"/>
+                </svg>
+                <span class="cart-count" id="cartCount" aria-label="Cart item count">0</span>
+            </li>
+        </ul>
+    </nav>
+
+    <header class="hero" id="home">
+        <div class="hero-logo">
+            <img src="assets/images/logo-converted.svg" alt="VPOWER LIGHTING AND DECOR" class="hero-logo-img">
+        </div>
+        <h1>Illuminating the Rustic Soul</h1>
+        <p>Expert lighting installation and decor services that bring warmth and elegance to your space.</p>
+        <a href="#services" class="main-cta">Schedule Your Consultation</a>
+    </header>
+
+    <section class="mission" id="mission">
+        <h2>Our Mission</h2>
+        <p>At VPOWER LIGHTING AND DECOR, we believe that lighting is not just a utility, but an art form. We are dedicated to preserving traditional craftsmanship, creating unique, handmade pieces that tell a story and transform houses into homes.</p>
+        <br>
+        <div class="founder-story">
+            <h3>Meet Our Founder</h3>
+            <p><strong>Vipower Lighting & Decor</strong> was founded by Victor Ambetsa out of a deep passion for transforming simple materials into beautiful sources of light. What began as a small dream in 2024 grew from Victor's hands-on experience working with wood, tools, and lighting installations in homes, churches, high end restaurants, Airbnb's and small businesses.</p>
+            <p>Growing up, Victor developed a love for craftsmanship and creativity. With limited resources but strong determination, he learned how to design, wire, and build rustic lighting pieces using locally sourced wood and recycled materials. Every project became an opportunity to improve his skills and serve clients better.</p>
+            <p>"To me, every piece of wood and every bulb has a purpose," Victor says. "My goal is to turn ordinary materials into something that brings warmth, peace, and beauty into people's spaces."</p>
+            <p>Based in Kenya, Victor works closely with customers to understand their needs and create lighting that fits their lifestyle, budget, and environment. From handmade chandeliers to custom wall sconces, each Vipower piece is crafted with care, honesty, and attention to safety.</p>
+            <p>Today, Vipower Lighting & Decor continues to grow with a strong focus on quality, creativity, and trust. Every light reflects Victor's belief that great design doesn't need to be expensive—only meaningful.</p>
+        </div>
+    </section>
+
+    <section class="gallery-section" id="gallery">
+        <h2 class="section-title">Our Lighting Collection</h2>
+        <div class="gallery-grid">
+            <div class="product-card">
+                <div class="product-img" onclick="openPackageModal('Timber Block Rustic Sconce')">
+                    <img src="assets/images/Timber Block Rustic Sconce/image.webp" alt="Timber Block Rustic Sconce">
+                    <div class="quick-view">
+                        <h3>Timber Block Rustic Sconce</h3>
+                        <span class="price">KES 2,000.00</span>
+                        <button class="quick-view-btn" onclick="addToCart('Timber Block Rustic Sconce', 2000.00, 'assets/images/Timber Block Rustic Sconce/image.webp')">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3>Timber Block Rustic Sconce</h3>
+                    <span class="price">KES 2,000.00</span>
+                    <p>Made from solid stained timber, this piece adds a raw natural charm that fits any rustic interior theme.</p>
+                    <div class="product-features">
+                        <h4>Features:</h4>
+                        <ul>
+                            <li>Solid wood construction</li>
+                            <li>Matte or glossy finish options</li>
+                            <li>Durable brass brackets</li>
+                        </ul>
+                    </div>
+                    <div class="best-for">
+                        <h4>Best for:</h4>
+                        <p>Entryways, restaurants, hotel corridors</p>
+                    </div>
+                    <a href="#" class="buy-btn" onclick="openPackageModal('Timber Block Rustic Sconce'); return false;">View Details</a>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-img" onclick="openPackageModal('Rustic Rope Wall Sconce')">
+                    <img src="assets/images/Rustic Rope Wall sconce/image.webp" alt="Rustic Rope Wall Sconce">
+                    <div class="quick-view">
+                        <h3>Rustic Rope Wall Sconce</h3>
+                        <span class="price">KES 2,200.00</span>
+                        <button class="quick-view-btn" onclick="addToCart('Rustic Rope Wall Sconce', 2200.00, 'assets/images/Rustic Rope Wall sconce/image.webp')">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3>Rustic Rope Wall Sconce</h3>
+                    <span class="price">KES 2,200.00</span>
+                    <p>A handcrafted wooden sconce featuring natural jute rope and a vintage filament bulb.</p>
+                    <div class="best-for">
+                        <h4>Best for:</h4>
+                        <p>Bedrooms, hallways, Living rooms, Bnbs</p>
+                    </div>
+                    <a href="#" class="buy-btn" onclick="openPackageModal('Rustic Rope Wall Sconce'); return false;">View Details</a>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-img" onclick="openPackageModal('Minimalist Wooden Peg Sconce')">
+                    <img src="assets/images/Minimalist Wooden Peg sconce/image.webp" alt="Minimalist Wooden Peg Sconce">
+                    <div class="quick-view">
+                        <h3>Minimalist Wooden Peg Sconce</h3>
+                        <span class="price">KES 1,500.00</span>
+                        <button class="quick-view-btn" onclick="addToCart('Minimalist Wooden Peg Sconce', 1500.00, 'assets/images/Minimalist Wooden Peg sconce/image.webp')">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3>Minimalist Wooden Peg Sconce</h3>
+                    <span class="price">KES 1,500.00</span>
+                    <p>A simple, elegant design with a clean wooden base and hanging bulb.</p>
+                    <div class="product-features">
+                        <h4>Features:</h4>
+                        <ul>
+                            <li>Light weight</li>
+                            <li>Clean cut design</li>
+                        </ul>
+                    </div>
+                    <div class="best-for">
+                        <h4>Best for:</h4>
+                        <p>Modern rustic homes, Restaurants, Museums, Cafes</p>
+                    </div>
+                    <a href="#" class="buy-btn" onclick="openPackageModal('Minimalist Wooden Peg Sconce'); return false;">View Details</a>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-img" onclick="openPackageModal('Hanging Driftwood Chandelier')">
+                    <img src="assets/images/Hanging Driftwood Chandelier/image.webp" alt="Hanging Driftwood Chandelier">
+                    <div class="quick-view">
+                        <h3>Hanging Driftwood Chandelier</h3>
+                        <span class="price">KES 9,000.00</span>
+                        <button class="quick-view-btn" onclick="addToCart('Hanging Driftwood Chandelier', 9000.00, 'assets/images/Hanging Driftwood Chandelier/image.webp')">Add to Cart</button>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3>Hanging Driftwood Chandelier</h3>
+                    <span class="price">KES 9,000.00</span>
+                    <p>Natural Driftwood combined with Jute Rope and vintage bulbs for powerful rustic look.</p>
+                    <div class="product-features">
+                        <h4>Features:</h4>
+                        <ul>
+                            <li>100% natural Driftwood</li>
+                            <li>Hanging ropes</li>
+                        </ul>
+                    </div>
+                    <div class="best-for">
+                        <h4>Best for:</h4>
+                        <p>Rustic homes, bridge style spaces, big rooms, restaurants, dining homes</p>
+                    </div>
+                    <a href="#" class="buy-btn" onclick="openPackageModal('Hanging Driftwood Chandelier'); return false;">View Details</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="services-section" id="services">
+        <h2 class="section-title">Professional Installation Services</h2>
+        <div class="services-content">
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="var(--primary-green)">
+                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+                        </svg>
+                    </div>
+                    <h3>Expert Installation</h3>
+                    <p>Our certified electricians ensure safe and professional installation of all VPOWER lighting fixtures, meeting all local electrical codes and standards.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="var(--primary-green)">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                        </svg>
+                    </div>
+                    <h3>Design Consultation</h3>
+                    <p>Comprehensive lighting design services to help you choose the perfect fixtures and create optimal lighting layouts for your space.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="var(--primary-green)">
+                            <path d="M11 17h2v-6h-2v6zm1-15C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zM11 9h2V7h-2v2z"/>
+                        </svg>
+                    </div>
+                    <h3>Maintenance & Support</h3>
+                    <p>Ongoing maintenance services and technical support to keep your VPOWER lighting fixtures operating perfectly for years to come.</p>
+                </div>
+            </div>
+            <div class="service-cta">
+                <h3>Transform Your Space with Professional Installation</h3>
+                <p>From consultation to final installation, our team ensures your VPOWER lighting is perfectly positioned and safely installed.</p>
+                <a href="contact.html" class="service-cta-btn">Schedule Installation</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Media Gallery Section -->
+    <section class="media-gallery-section" id="mediaGallery">
+        <!-- Gallery content will be loaded by JavaScript -->
+    </section>
+
+    <section class="story-section" id="blog">
+        <div class="story-content">
+            <div class="story-text">
+                <h2>Behind the Craft</h2>
+                <p>Every VPOWER light begins as a raw material—be it reclaimed timber or raw iron. Our blog details the journey of our artisans, offering a glimpse into the heat, the dust, and the passion that goes into every curve and connection.</p>
+                <br>
+                <a href="blog/blog-template.html" style="color: var(--primary-green); font-weight: bold; border-bottom: 2px solid var(--accent-yellow);">Read Our Latest Stories &rarr;</a>
+            </div>
+            <div class="story-image">
+                <img src="assets/images/collage.webp" alt="Collage of VPOWER artisans crafting lighting fixtures">
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">VPOWER LIGHTING AND DECOR</div>
+            <div class="social-links">
+                <a href="https://www.instagram.com/vipowerlighting" target="_blank" aria-label="Instagram">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zM5.838 12a6.162 6.162 0 1 1 12.324 0 6.162 6.162 0 0 1-12.324 0zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm4.965-10.405a1.44 1.44 0 1 1 2.881.001 1.44 1.44 0 0 1-2.881-.001z"/>
+                    </svg>
+                </a>
+                <a href="https://pinterest.com/vipowerlightingdecor" target="_blank" aria-label="Pinterest">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 0c-6.627 0-12 5.372-12 12 0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738.098.119.112.224.083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.631-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146 1.124.347 2.317.535 3.554.535 6.627 0 12-5.373 12-12 0-6.628-5.373-12-12-12z"/>
+                    </svg>
+                </a>
+                <a href="https://www.facebook.com/VipowerLightingDecor" target="_blank" aria-label="Facebook">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+        <p>&copy; 2024. Handcrafted with pride.</p>
+    </footer>
+
+    <!-- Package Detail Modal -->
+    <div class="package-modal" id="packageModal">
+        <div class="package-modal-content">
+            <div class="package-modal-header">
+                <h2 id="packageTitle">Package Details</h2>
+                <button class="package-modal-close" onclick="closePackageModal()">&times;</button>
+            </div>
+            <div class="package-modal-body">
+                <div class="package-info">
+                    <p id="packageDescription"></p>
+                    <div class="package-price" id="packagePrice"></div>
+                </div>
+                <div class="package-variants">
+                    <h3>Select Your Light:</h3>
+                    <div class="variant-grid" id="variantGrid">
+                        <!-- Variants will be loaded here -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Lightbox Modal -->
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+        <div class="lightbox-content">
+            <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+            <img id="lightbox-img" src="" alt="Product Image">
+        </div>
+    </div>
+
+    <!-- Shopping Cart Modal -->
+    <div class="cart-overlay" id="cartOverlay" onclick="closeCart()"></div>
+    <div class="cart-modal" id="cartModal">
+        <div class="cart-header">
+            <h3>Your Cart</h3>
+            <button class="cart-close" onclick="closeCart()">&times;</button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <div class="empty-cart">Your cart is empty</div>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cartTotal">$0.00</span>
+            </div>
+            <button class="checkout-btn" onclick="checkout()">Proceed to Checkout</button>
+        </div>
+    </div>
+
+    <script>
+        // Shopping Cart functionality
+        let cart = [];
+        
+        function addToCart(name, price, image) {
+            try {
+                const existingItem = cart.find(item => item.name === name);
+                if (existingItem) {
+                    existingItem.quantity++;
+                } else {
+                    cart.push({ name, price, image, quantity: 1 });
+                }
+                updateCart();
+                showNotification('Item added to cart!');
+            } catch (error) {
+                console.error('Error adding item to cart:', error);
+                showNotification('Error adding item to cart. Please try again.');
+            }
+        }
+        
+        function removeFromCart(name) {
+            try {
+                cart = cart.filter(item => item.name !== name);
+                updateCart();
+            } catch (error) {
+                console.error('Error removing item from cart:', error);
+                showNotification('Error removing item from cart. Please try again.');
+            }
+        }
+        
+        function updateQuantity(name, change) {
+            try {
+                const item = cart.find(item => item.name === name);
+                if (item) {
+                    item.quantity += change;
+                    if (item.quantity <= 0) {
+                        removeFromCart(name);
+                    } else {
+                        updateCart();
+                    }
+                }
+            } catch (error) {
+                console.error('Error updating quantity:', error);
+                showNotification('Error updating quantity. Please try again.');
+            }
+        }
+        
+        function updateCart() {
+            try {
+                const cartItems = document.getElementById('cartItems');
+                const cartCount = document.getElementById('cartCount');
+                const cartTotal = document.getElementById('cartTotal');
+                
+                if (!cartItems || !cartCount || !cartTotal) {
+                    throw new Error('Cart elements not found');
+                }
+                
+                if (cart.length === 0) {
+                    cartItems.innerHTML = '<div class="empty-cart">Your cart is empty</div>';
+                    cartCount.textContent = '0';
+                    cartTotal.textContent = '$0.00';
+                    return;
+                }
+                
+                let html = '';
+                let total = 0;
+                let count = 0;
+                
+                cart.forEach(item => {
+                    const itemTotal = item.price * item.quantity;
+                    total += itemTotal;
+                    count += item.quantity;
+                    
+                    html += `
+                        <div class="cart-item">
+                            <img src="${item.image}" alt="${item.name}">
+                            <div class="cart-item-details">
+                                <div class="cart-item-title">${item.name}</div>
+                                <div class="cart-item-price">$${item.price.toFixed(2)}</div>
+                                <div class="quantity-controls">
+                                    <button class="quantity-btn" onclick="updateQuantity('${item.name}', -1)" aria-label="Decrease quantity">-</button>
+                                    <span class="quantity">${item.quantity}</span>
+                                    <button class="quantity-btn" onclick="updateQuantity('${item.name}', 1)" aria-label="Increase quantity">+</button>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                });
+                
+                cartItems.innerHTML = html;
+                cartCount.textContent = count;
+                cartTotal.textContent = `$${total.toFixed(2)}`;
+            } catch (error) {
+                console.error('Error updating cart display:', error);
+                showNotification('Error updating cart. Please refresh the page.');
+            }
+        }
+        
+        function openCart() {
+            try {
+                document.getElementById('cartModal').classList.add('active');
+                document.getElementById('cartOverlay').classList.add('active');
+                document.querySelector('.cart-icon').setAttribute('aria-expanded', 'true');
+            } catch (error) {
+                console.error('Error opening cart:', error);
+                showNotification('Error opening cart. Please try again.');
+            }
+        }
+        
+        function closeCart() {
+            try {
+                document.getElementById('cartModal').classList.remove('active');
+                document.getElementById('cartOverlay').classList.remove('active');
+                document.querySelector('.cart-icon').setAttribute('aria-expanded', 'false');
+            } catch (error) {
+                console.error('Error closing cart:', error);
+            }
+        }
+        
+        function checkout() {
+            try {
+                if (cart.length === 0) {
+                    showNotification('Your cart is empty!');
+                    return;
+                }
+                
+                const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+                const paypalUrl = `https://www.paypal.com/cgi-bin/webscr?business=james@vpowerlighting.com&cmd=_cart&amount=${total.toFixed(2)}&currency_code=USD`;
+                
+                // Validate total amount
+                if (total <= 0 || isNaN(total)) {
+                    throw new Error('Invalid cart total');
+                }
+                
+                window.open(paypalUrl, '_blank');
+                
+                // Clear cart after checkout
+                cart = [];
+                updateCart();
+                closeCart();
+                showNotification('Redirecting to PayPal for payment...');
+            } catch (error) {
+                console.error('Error during checkout:', error);
+                showNotification('Error during checkout. Please try again.');
+            }
+        }
+        
+        function showNotification(message) {
+            try {
+                // Create notification element
+                const notification = document.createElement('div');
+                notification.style.cssText = `
+                    position: fixed;
+                    top: 20px;
+                    right: 20px;
+                    background-color: var(--primary-green);
+                    color: var(--white);
+                    padding: 1rem;
+                    border-radius: 4px;
+                    z-index: 4000;
+                    font-family: 'Georgia', serif;
+                    max-width: 300px;
+                    word-wrap: break-word;
+                `;
+                notification.textContent = message;
+                notification.setAttribute('role', 'alert');
+                notification.setAttribute('aria-live', 'polite');
+                
+                document.body.appendChild(notification);
+                
+                // Remove after 3 seconds
+                setTimeout(() => {
+                    if (document.body.contains(notification)) {
+                        document.body.removeChild(notification);
+                    }
+                }, 3000);
+            } catch (error) {
+                console.error('Error showing notification:', error);
+                // Fallback to alert if notification system fails
+                alert(message);
+            }
+        }
+        
+        function openLightbox(imageSrc) {
+            try {
+                const lightbox = document.getElementById('lightbox');
+                const lightboxImg = document.getElementById('lightbox-img');
+                
+                if (!lightbox || !lightboxImg) {
+                    throw new Error('Lightbox elements not found');
+                }
+                
+                lightboxImg.src = imageSrc;
+                lightboxImg.alt = 'Enlarged product image';
+                lightbox.classList.add('active');
+                
+                // Focus management for accessibility
+                lightboxImg.focus();
+            } catch (error) {
+                console.error('Error opening lightbox:', error);
+                showNotification('Error opening image. Please try again.');
+            }
+        }
+
+        function closeLightbox() {
+            try {
+                const lightbox = document.getElementById('lightbox');
+                if (lightbox) {
+                    lightbox.classList.remove('active');
+                }
+            } catch (error) {
+                console.error('Error closing lightbox:', error);
+            }
+        }
+
+        // Package Modal functionality
+        const packageData = {
+            'Timber Block Rustic Sconce': {
+                title: 'Timber Block Rustic Sconce',
+                description: 'Made from solid stained timber, this piece adds a raw natural charm that fits any rustic interior theme.',
+                price: 'KES 2,000.00',
+                images: [
+                    'assets/images/Timber Block Rustic Sconce/image.webp',
+                    'assets/images/Timber Block Rustic Sconce/image1.webp',
+                    'assets/images/Timber Block Rustic Sconce/image2.webp',
+                    'assets/images/Timber Block Rustic Sconce/image3.webp',
+                    'assets/images/Timber Block Rustic Sconce/image4.webp',
+                    'assets/images/Timber Block Rustic Sconce/image5.webp',
+                    'assets/images/Timber Block Rustic Sconce/image6.webp',
+                    'assets/images/Timber Block Rustic Sconce/image7.webp'
+                ]
+            },
+            'Rustic Rope Wall Sconce': {
+                title: 'Rustic Rope Wall Sconce',
+                description: 'A handcrafted wooden sconce featuring natural jute rope and a vintage filament bulb.',
+                price: 'KES 2,200.00',
+                images: [
+                    'assets/images/Rustic Rope Wall sconce/image.webp',
+                    'assets/images/Rustic Rope Wall sconce/image (1).webp',
+                    'assets/images/Rustic Rope Wall sconce/image (6).webp',
+                    'assets/images/Rustic Rope Wall sconce/image (7).webp',
+                    'assets/images/Rustic Rope Wall sconce/image (8).webp',
+                    'assets/images/Rustic Rope Wall sconce/image (9).webp'
+                ]
+            },
+            'Minimalist Wooden Peg Sconce': {
+                title: 'Minimalist Wooden Peg Sconce',
+                description: 'A simple, elegant design with a clean wooden base and hanging bulb.',
+                price: 'KES 1,500.00',
+                images: [
+                    'assets/images/Minimalist Wooden Peg sconce/image.webp',
+                    'assets/images/Minimalist Wooden Peg sconce/image (1).webp',
+                    'assets/images/Minimalist Wooden Peg sconce/image (2).webp',
+                    'assets/images/Minimalist Wooden Peg sconce/image (3).webp',
+                    'assets/images/Minimalist Wooden Peg sconce/image (4).webp'
+                ]
+            },
+            'Hanging Driftwood Chandelier': {
+                title: 'Hanging Driftwood Chandelier',
+                description: 'Natural Driftwood combined with Jute Rope and vintage bulbs for powerful rustic look.',
+                price: 'KES 9,000.00',
+                images: [
+                    'assets/images/Hanging Driftwood Chandelier/image.webp',
+                    'assets/images/Hanging Driftwood Chandelier/image (1).webp',
+                    'assets/images/Hanging Driftwood Chandelier/image (2).webp',
+                    'assets/images/Hanging Driftwood Chandelier/image (3).webp',
+                    'assets/images/Hanging Driftwood Chandelier/image (4).webp'
+                ]
+            }
+        };
+
+        function openPackageModal(packageName) {
+            try {
+                const modal = document.getElementById('packageModal');
+                const package = packageData[packageName];
+                
+                if (!package) {
+                    throw new Error('Package not found: ' + packageName);
+                }
+                
+                // Update package info
+                document.getElementById('packageTitle').textContent = package.title;
+                document.getElementById('packageDescription').textContent = package.description;
+                document.getElementById('packagePrice').textContent = package.price;
+                
+                // Load variants
+                loadVariants(packageName, package.images);
+                
+                // Show modal
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+                
+            } catch (error) {
+                console.error('Error opening package modal:', error);
+                showNotification('Error opening package details. Please try again.');
+            }
+        }
+
+        function closePackageModal() {
+            try {
+                const modal = document.getElementById('packageModal');
+                modal.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            } catch (error) {
+                console.error('Error closing package modal:', error);
+            }
+        }
+
+        function loadVariants(packageName, images) {
+            try {
+                const variantGrid = document.getElementById('variantGrid');
+                variantGrid.innerHTML = '';
+                
+                images.forEach((imagePath, index) => {
+                    const variantCard = document.createElement('div');
+                    variantCard.className = 'variant-card';
+                    variantCard.innerHTML = `
+                        <img src="${imagePath}" alt="${packageName} - Style ${index + 1}" class="variant-img" onclick="openLightbox('${imagePath}')">
+                        <div class="variant-info">
+                            <h4>${packageName} - Style ${index + 1}</h4>
+                            <div class="variant-price">${packageData[packageName].price}</div>
+                            <button class="variant-select-btn" onclick="selectVariant('${packageName}', '${imagePath}', ${index + 1})">Select This Light</button>
+                        </div>
+                    `;
+                    variantGrid.appendChild(variantCard);
+                });
+                
+            } catch (error) {
+                console.error('Error loading variants:', error);
+                showNotification('Error loading package variants. Please try again.');
+            }
+        }
+
+        function selectVariant(packageName, imagePath, variantNumber) {
+            try {
+                const package = packageData[packageName];
+                const variantName = `${packageName} - Style ${variantNumber}`;
+                
+                // Add to cart with specific variant info
+                addToCart(variantName, parseFloat(package.price.replace('KES ', '').replace(',', '')), imagePath);
+                
+                // Close modal
+                closePackageModal();
+                
+                showNotification(`${variantName} added to cart!`);
+                
+            } catch (error) {
+                console.error('Error selecting variant:', error);
+                showNotification('Error selecting variant. Please try again.');
+            }
+        }
+
+        // Keyboard navigation for cart
+        document.addEventListener('keydown', function(event) {
+            try {
+                if (event.key === 'Escape') {
+                    closeLightbox();
+                    closeCart();
+                    closePackageModal();
+                }
+                
+                // Cart keyboard navigation
+                if (event.key === 'Enter' && document.activeElement.classList.contains('cart-icon')) {
+                    openCart();
+                }
+            } catch (error) {
+                console.error('Error in keyboard handler:', error);
+            }
+        });
+
+        // Initialize cart on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            try {
+                updateCart();
+            } catch (error) {
+                console.error('Error initializing cart:', error);
+            }
+        });
+    </script>
+
+    <!-- Dynamic Product Loading -->
+    <script src="js/products.js"></script>
+
+    <!-- Media Gallery Loading -->
+    <script src="js/gallery.js"></script>
+
+</body>
+</html>

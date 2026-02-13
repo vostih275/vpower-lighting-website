@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VPOWER Admin - Add Products</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .admin-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+            font-family: 'Georgia', serif;
+        }
+        
+        .admin-header {
+            background: var(--primary-green, #0C610A);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .admin-section {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .form-group {
+            margin-bottom: 15px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: var(--primary-green, #0C610A);
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: inherit;
+        }
+        
+        .btn {
+            background: var(--primary-green, #0C610A);
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-family: inherit;
+            font-size: 16px;
+            transition: background 0.3s;
+        }
+        
+        .btn:hover {
+            background: #0a4f08;
+        }
+        
+        .btn-danger {
+            background: #dc3545;
+        }
+        
+        .btn-danger:hover {
+            background: #c82333;
+        }
+        
+        .products-list {
+            display: grid;
+            gap: 20px;
+        }
+        
+        .product-item {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 15px;
+            display: grid;
+            grid-template-columns: 150px 1fr auto;
+            gap: 20px;
+            align-items: center;
+        }
+        
+        .product-image {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+        
+        .product-info h3 {
+            margin: 0 0 10px 0;
+            color: var(--primary-green, #0C610A);
+        }
+        
+        .product-info p {
+            margin: 5px 0;
+            color: #666;
+        }
+        
+        .product-actions {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .success-message {
+            background: #d4edda;
+            color: #155724;
+            padding: 15px;
+            border-radius: 4px;
+            margin-bottom: 20px;
+            border: 1px solid #c3e6cb;
+        }
+        
+        .image-upload-area {
+            border: 2px dashed #ddd;
+            border-radius: 8px;
+            padding: 40px;
+            text-align: center;
+            cursor: pointer;
+            transition: border-color 0.3s;
+        }
+        
+        .image-upload-area:hover {
+            border-color: var(--primary-green, #0C610A);
+        }
+        
+        .preview-images {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+            gap: 10px;
+            margin-top: 20px;
+        }
+        
+        .preview-image {
+            position: relative;
+        }
+        
+        .preview-image img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+        
+        .preview-image .remove-btn {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            background: rgba(220, 53, 69, 0.8);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="admin-container">
+        <header class="admin-header">
+            <h1>VPOWER Product Admin</h1>
+            <p>Add products that will automatically appear on the homepage</p>
+            <a href="index.html" style="color: white; text-decoration: underline;">← View Website</a>
+        </header>
+
+        <div id="successMessage" class="success-message" style="display: none;">
+            <strong>✅ Product added successfully!</strong> It will appear on the homepage.
+        </div>
+
+        <section class="admin-section">
+            <h2>Add New Product</h2>
+            <form id="productForm">
+                <div class="form-group">
+                    <label for="productName">Product Name:</label>
+                    <input type="text" id="productName" name="productName" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="productPrice">Price (KES):</label>
+                    <input type="number" id="productPrice" name="productPrice" step="0.01" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="productDescription">Description:</label>
+                    <textarea id="productDescription" name="productDescription" rows="4" required></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="productBestFor">Best For:</label>
+                    <input type="text" id="productBestFor" name="productBestFor" placeholder="e.g., Entryways, restaurants, hotel corridors">
+                </div>
+
+                <div class="form-group">
+                    <label>Features (one per line):</label>
+                    <textarea id="productFeatures" name="productFeatures" rows="3" placeholder="Solid wood construction&#10;Matte or glossy finish options&#10;Durable brass brackets"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>Product Images:</label>
+                    <div class="image-upload-area" id="imageUploadArea">
+                        <p>Click to upload or drag and drop images here</p>
+                        <p style="font-size: 12px; color: #666;">Supports: JPG, PNG, WebP (Max: 5MB per file)</p>
+                        <input type="file" id="imageInput" multiple accept="image/*" style="display: none;">
+                    </div>
+                    <div class="preview-images" id="previewImages"></div>
+                </div>
+
+                <button type="submit" class="btn">Add Product to Website</button>
+                <button type="button" class="btn btn-secondary" onclick="clearForm()">Clear Form</button>
+            </form>
+        </section>
+
+        <section class="admin-section">
+            <h2>Current Products</h2>
+            <div class="products-list" id="productsList">
+                <p>No products added yet. Add your first product above!</p>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        let products = [];
+        let uploadedImages = [];
+
+        // Load existing products
+        function loadProducts() {
+            const saved = localStorage.getItem('vpower_products');
+            if (saved) {
+                products = JSON.parse(saved);
+            }
+            displayProducts();
+        }
+
+        // Display products
+        function displayProducts() {
+            const container = document.getElementById('productsList');
+            
+            if (products.length === 0) {
+                container.innerHTML = '<p>No products added yet. Add your first product above!</p>';
+                return;
+            }
+
+            container.innerHTML = products.map((product, index) => `
+                <div class="product-item">
+                    <div>
+                        ${product.mainImage ? `<img src="${product.mainImage}" alt="${product.name}" class="product-image">` : ''}
+                    </div>
+                    <div class="product-info">
+                        <h3>${product.name}</h3>
+                        <p><strong>Price:</strong> KES ${product.price.toFixed(2)}</p>
+                        <p><strong>Description:</strong> ${product.description}</p>
+                        ${product.bestFor ? `<p><strong>Best For:</strong> ${product.bestFor}</p>` : ''}
+                        ${product.features && product.features.length > 0 ? `
+                            <p><strong>Features:</strong></p>
+                            <ul>
+                                ${product.features.map(f => `<li>${f}</li>`).join('')}
+                            </ul>
+                        ` : ''}
+                    </div>
+                    <div class="product-actions">
+                        <button class="btn btn-danger" onclick="deleteProduct(${index})">Delete</button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Handle image upload
+        document.getElementById('imageUploadArea').addEventListener('click', () => {
+            document.getElementById('imageInput').click();
+        });
+
+        document.getElementById('imageInput').addEventListener('change', handleImageUpload);
+
+        function handleImageUpload(event) {
+            const files = event.target.files;
+            const previewArea = document.getElementById('previewImages');
+            
+            Array.from(files).forEach(file => {
+                if (file.type.startsWith('image/') && file.size <= 5 * 1024 * 1024) {
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        const imageId = 'img_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+                        uploadedImages.push({
+                            id: imageId,
+                            data: e.target.result,
+                            name: file.name
+                        });
+                        
+                        const previewDiv = document.createElement('div');
+                        previewDiv.className = 'preview-image';
+                        previewDiv.innerHTML = `
+                            <img src="${e.target.result}" alt="${file.name}">
+                            <button type="button" class="remove-btn" onclick="removeImage('${imageId}')">×</button>
+                        `;
+                        previewArea.appendChild(previewDiv);
+                    };
+                    reader.readAsDataURL(file);
+                }
+            });
+        }
+
+        function removeImage(imageId) {
+            uploadedImages = uploadedImages.filter(img => img.id !== imageId);
+            refreshImagePreview();
+        }
+
+        function refreshImagePreview() {
+            const previewArea = document.getElementById('previewImages');
+            previewArea.innerHTML = uploadedImages.map(img => `
+                <div class="preview-image">
+                    <img src="${img.data}" alt="${img.name}">
+                    <button type="button" class="remove-btn" onclick="removeImage('${img.id}')">×</button>
+                </div>
+            `).join('');
+        }
+
+        // Handle form submission
+        document.getElementById('productForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const features = document.getElementById('productFeatures').value
+                .split('\n')
+                .map(f => f.trim())
+                .filter(f => f !== '');
+
+            const product = {
+                id: 'product_' + Date.now(),
+                name: document.getElementById('productName').value,
+                price: parseFloat(document.getElementById('productPrice').value),
+                description: document.getElementById('productDescription').value,
+                bestFor: document.getElementById('productBestFor').value,
+                features: features,
+                mainImage: uploadedImages.length > 0 ? uploadedImages[0].data : null,
+                images: uploadedImages,
+                createdAt: new Date().toISOString()
+            };
+
+            products.push(product);
+            localStorage.setItem('vpower_products', JSON.stringify(products));
+            
+            // Show success message
+            const successMsg = document.getElementById('successMessage');
+            successMsg.style.display = 'block';
+            setTimeout(() => {
+                successMsg.style.display = 'none';
+            }, 3000);
+            
+            // Clear form and reload
+            clearForm();
+            displayProducts();
+        });
+
+        function clearForm() {
+            document.getElementById('productForm').reset();
+            uploadedImages = [];
+            refreshImagePreview();
+        }
+
+        function deleteProduct(index) {
+            if (confirm('Delete this product?')) {
+                products.splice(index, 1);
+                localStorage.setItem('vpower_products', JSON.stringify(products));
+                displayProducts();
+            }
+        }
+
+        // Initialize
+        loadProducts();
+    </script>
+</body>
+</html>

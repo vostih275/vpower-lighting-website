@@ -1,0 +1,25 @@
+<svg width="200" height="60" viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="greenGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0C610A;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1a7f18;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Light bulb shape -->
+  <path d="M30 15 C30 8, 37 2, 45 2 C53 2, 60 8, 60 15 C60 22, 57 26, 54 30 L54 40 C54 42, 52 44, 50 44 L40 44 C38 44, 36 42, 36 40 L36 30 C33 26, 30 22, 30 15 Z" 
+        fill="url(#greenGradient)" stroke="#0C610A" stroke-width="1"/>
+  
+  <!-- Light rays -->
+  <path d="M45 0 L45 5 M35 5 L38 8 M55 5 L52 8 M30 15 L25 15 M60 15 L65 15" 
+        stroke="#FFEF16" stroke-width="2" stroke-linecap="round"/>
+  
+  <!-- Base threads -->
+  <rect x="38" y="44" width="14" height="2" fill="#666"/>
+  <rect x="38" y="47" width="14" height="2" fill="#666"/>
+  <rect x="38" y="50" width="14" height="2" fill="#666"/>
+  
+  <!-- VPOWER text -->
+  <text x="75" y="25" font-family="Georgia, serif" font-size="18" font-weight="bold" fill="#0C610A">VPOWER</text>
+  <text x="75" y="42" font-family="Georgia, serif" font-size="10" fill="#666">LIGHTING AND DECOR</text>
+</svg>
