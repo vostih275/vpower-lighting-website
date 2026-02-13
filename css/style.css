@@ -371,6 +371,30 @@ header.hero {
     align-items: center;
     justify-content: center;
     color: var(--primary-green, #0C610A);
+    transition: all 0.3s ease;
+    pointer-events: none;
+}
+
+.video-item:hover .play-icon {
+    display: none;
+}
+
+.video-error {
+    position: relative;
+}
+
+.video-error::after {
+    content: "📹 Video Loading...";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(12, 97, 10, 0.9);
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    z-index: 10;
 }
 
 .media-title {
